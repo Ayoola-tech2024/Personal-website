@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" href="Adams logo - Copy (2).JPG">
+    <link rel="stylesheet" href="styel.css">
+</head>
+<body>
+    <style>
+        .navbar a:hover
+, .navbar a.active{
+    color: #00abf0;
+}
+img .cancel{
+    width: 10px;
+}
+.hidden{
+    display: none;
+}
+:root{
+    --my-color{
+        color: #081b29;
+    }
+}
+button{
+    padding: 10px 15px;
+    background: #132c47;
+    border: 0cap;
+    box-shadow: 4px 4px 10px 4px #78aead;
+    border-radius: 7px;
+    color: #d4ece9;
+    }
+    button:hover{
+    color: #132c47;
+    background: #d4ece9;
+    }
+    #pin-container h2{
+        margin-top: 50px;
+    }
+    .pin-container button{
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+.pin-input {
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+body{
+    background: #081b29;    
+    }
+    </style>
+<header class="header">
+    <a href="#" class="logo">ADAMS</a>
+    <nav id="navlinks" class="navbar">
+        <img src="Cancel button.JPG" onclick="cancelMenu()" class="Cancel">
+        <a href="index.html" class="active">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="service.html">SERVICES</a>
+        <a href="#">CONTACT</a>
+    </nav>
+    <img src="menu_8872262.png" onclick="showMenu()" class="menu" width="30px" >
+</header>
+
+<div id="pin-container">
+    <h2>Enter PIN to Access the Site</h2>
+    <input type="password" id="pin-input" class="pin-input" placeholder="Enter PIN" />
+    <button onclick="checkPin()">Submit</button>
+</div>
+<div id="main-content" class="hidden">
+
+<section class="home">
+    <div class="home-content">
+        <h1>Hi, I'm Adams Romeo</h1>
+        <h3>A Frontend developer</h3>
+        <div class="text">
+            <p>
+                Lorem ipsum dolor sit, amet 
+                consectetur adipisicing elit. Error fugiat 
+                et quidem ea. Numquam corrupti provident eos 
+                accusantium suscipit dolore ratione, neque quos delectus doloribus 
+                consequuntur, vel veniam itaque animi, saepe rem omnis nec
+                essitatibus eius.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet 
+                consectetur adipisicing elit. Error fugiat 
+                et quidem ea. Numquam corrupti provident eos 
+                accusantium suscipit dolore ratione, neque quos delectus doloribus 
+                consequuntur, vel veniam itaque animi, saepe rem omnis nec
+                essitatibus eius.
+            </p>
+        </div>
+        
+        <div class="btn-box">
+            <a href="mailto:damisileayoola@gmail.com">Hire me</a>
+            <a class="me" href="mailto:damisileayoola@gmail.com">Let's talk</a>
+        </div>
+    </div>
+</section>
+
+        <!---------Footer codes--------->
+        <center>
+            <footer class="footer">
+                <div class="container">
+                <div class="row">
+                <div class="col-md-4">
+                <h4>ABOUT US</h4>
+                <p>Afsswebsite-adams is a leading provider of innovative solutions.</p>
+                <ul class="social-media">
+                <li><a href="#" target="_blank"><i class="fa fa-facebook">Facebook: Ayoola Damisile</i></a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-twitter">Twitter: Adams Romeo</i></a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-linkedin">Linkedin: Ayoola Damisile</i></a></li>
+                </ul>
+                </div>
+                <div class="col-md-4">
+                <h4>Contact Us</h4>
+                <p>
+                Address: 74 ajilsoun street, Ado-ekiti,Ekiti-state  Nigeria.
+                
+                
+                Phone: +234 08137565168
+                
+                
+                Email: <a href="mailto:damisileayoola@gmail.com">damisileayoola@gmail.com</a>
+                </p>
+                </div>
+                </div>
+                <div class="copyright">
+                &copy; 2024 porfoliowebsite-adams. All rights reserved.
+                </div>
+                </div>
+            </footer>
+        </center>
+    </div>    
+</body>
+    <!--------javacript for toggle menu--------->
+    <script defer>
+        var navlinks = document.getElementById("navlinks");
+    
+        function cancelMenu(){
+            navlinks.style.width = "0";
+        }
+        function showMenu(){
+            navlinks.style.width = "30vh";
+        }
+        
+    function checkPin() {
+        const inputPin = document.getElementById('pin-input').value;
+        const correctPin = 'damisile';
+
+        if (inputPin === correctPin) {
+            document.getElementById('pin-container').classList.add('hidden');
+            alert("Successfully signed in ✔")
+            document.getElementById('main-content').classList.remove('hidden');
+        } else {
+            alert('Incorrect password💔. Please try again.');
+        }
+    }
+
+    function toggleNav() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('nav-active');
+    }
+    </script>
+</html>
